@@ -1,4 +1,4 @@
-# Elevator — Going Up 🛗
+# Elevator — Going Up 
 
 <img width="2486" height="1261" alt="image" src="https://github.com/user-attachments/assets/bc1f0810-9de6-4ff5-8f9b-5973d7bc145c" />
 
@@ -59,7 +59,3 @@ npx serve .
 ## 📦 Tech Stack
 
 **HTML · CSS · Vanilla JS · CSS Custom Properties · IntersectionObserver API**
-
----
-
-Made by [Dmitry Kontsybko](https://github.com/Okbitsnok) — comment **CODE** to get the source 👇
