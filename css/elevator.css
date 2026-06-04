@@ -1,0 +1,189 @@
+/* ── ELEVATOR OVERLAY ── */
+#elevator-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  pointer-events: none;
+  display: flex;
+}
+
+/* Two doors */
+.door {
+  flex: 1;
+  height: 100%;
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--door-speed) var(--door-ease);
+}
+.door-left  { transform-origin: left;  border-right: 1px solid rgba(124,58,237,0.4); }
+.door-right { transform-origin: right; border-left:  1px solid rgba(124,58,237,0.4); }
+
+/* Door texture — vertical lines */
+.door::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 48px,
+    rgba(124,58,237,0.06) 48px,
+    rgba(124,58,237,0.06) 49px
+  );
+}
+
+/* Door sheen */
+.door::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(124,58,237,0.03) 0%,
+    rgba(167,139,250,0.08) 50%,
+    rgba(124,58,237,0.03) 100%
+  );
+}
+
+/* Door logo */
+.door-logo {
+  position: absolute;
+  top: 50%;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(167,139,250,0.3);
+  transform: translateY(-50%);
+}
+.door-left  .door-logo { right: 24px; }
+.door-right .door-logo { left:  24px; }
+
+/* Elevator gap glow */
+.door-gap {
+  position: fixed;
+  top: 0; left: 50%; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    var(--accent) 20%,
+    var(--accent2) 50%,
+    var(--accent) 80%,
+    transparent 100%
+  );
+  transform: translateX(-50%);
+  z-index: 501;
+  box-shadow: 0 0 20px var(--accent), 0 0 40px rgba(124,58,237,0.5);
+  opacity: 1;
+  transition: opacity .4s ease;
+}
+
+/* Open state */
+.elevator-open .door-left  { transform: translateX(-100%); }
+.elevator-open .door-right { transform: translateX(100%); }
+.elevator-open .door-gap   { opacity: 0; }
+
+/* ── FLOOR INDICATOR — top center ── */
+#floor-indicator {
+  position: fixed;
+  top: 28px; left: 50%; transform: translateX(-50%);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(14,12,26,0.85);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 10px 24px;
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+#floor-indicator.visible { opacity: 1; }
+
+.floor-arrow {
+  font-size: 14px;
+  color: var(--accent2);
+  cursor: none;
+  transition: color .3s;
+  text-decoration: none;
+}
+.floor-arrow:hover { color: var(--accent3); }
+
+.floor-num {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
+  min-width: 32px;
+  text-align: center;
+  line-height: 1;
+}
+.floor-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  min-width: 100px;
+}
+
+/* ── FLOOR BUTTONS — right side ── */
+#floor-buttons {
+  position: fixed;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+#floor-buttons.visible { opacity: 1; }
+
+.floor-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(14,12,26,0.8);
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .3s, border-color .3s, color .3s, box-shadow .3s;
+  backdrop-filter: blur(8px);
+  text-decoration: none;
+}
+.floor-btn:hover,
+.floor-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+  box-shadow: 0 0 20px rgba(124,58,237,0.5);
+}
+
+/* ── DING animation ── */
+@keyframes ding {
+  0%   { opacity: 0; transform: translateX(-50%) scale(0.8); }
+  20%  { opacity: 1; transform: translateX(-50%) scale(1); }
+  80%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) scale(0.9); }
+}
+.ding-text {
+  position: fixed;
+  top: 50%; left: 50%;
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  z-index: 502;
+  animation: ding 2s ease forwards;
+  pointer-events: none;
+}

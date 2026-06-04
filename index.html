@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elevate — Going Up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/elevator.css">
+<link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- Elevator Overlay (doors) -->
+<div id="elevator-overlay">
+  <div class="door door-left">
+    <div class="door-logo">Elevate</div>
+  </div>
+  <div class="door door-right">
+    <div class="door-logo">Studio</div>
+  </div>
+</div>
+<div class="door-gap"></div>
+
+<!-- Floor Indicator -->
+<div id="floor-indicator">
+  <span class="floor-arrow" href="#floor-1">▲</span>
+  <div>
+    <div class="floor-num" id="current-floor-num">L</div>
+  </div>
+  <div class="floor-label" id="current-floor-label">Lobby</div>
+  <span class="floor-arrow" href="#floor-4">▼</span>
+</div>
+
+<!-- Floor Buttons -->
+<div id="floor-buttons">
+  <a class="floor-btn active" data-floor="floor-1" href="#floor-1">L</a>
+  <a class="floor-btn" data-floor="floor-2" href="#floor-2">2</a>
+  <a class="floor-btn" data-floor="floor-3" href="#floor-3">3</a>
+  <a class="floor-btn" data-floor="floor-4" href="#floor-4">R</a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     FLOOR 1 — LOBBY / HERO
+════════════════════════════════════════════ -->
+<section id="floor-1">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-badge reveal">
+    <div class="badge-dot"></div>
+    Welcome to the lobby
+  </div>
+
+  <h1 class="hero-title">
+    <span class="line"><span class="word">Going</span></span>
+    <span class="line"><span class="word grad">Up?</span></span>
+    <span class="line"><span class="word dim">Floor</span>&nbsp;<span class="word">by Floor.</span></span>
+  </h1>
+
+  <p class="hero-sub reveal reveal-delay-1">
+    Every great product starts with a single floor. We help you build something worth riding to the top.
+  </p>
+
+  <div class="hero-actions reveal reveal-delay-2">
+    <a href="#floor-2" class="btn-primary">Take the elevator →</a>
+    <a href="#floor-4" class="btn-ghost">Skip to rooftop</a>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FLOOR 2 — FEATURES
+════════════════════════════════════════════ -->
+<section id="floor-2">
+  <div class="blob blob-1" style="opacity:.4"></div>
+
+  <div style="max-width:1100px;width:100%;padding:0 80px">
+    <div class="floor-header">
+      <div class="floor-eyebrow reveal">Floor 2 — What we do</div>
+      <h2 class="floor-title reveal reveal-delay-1">
+        Built for<br><span class="grad">the climb</span>
+      </h2>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-num">01</div>
+        <div class="feature-title">Fast Delivery</div>
+        <div class="feature-desc">Speed without sacrificing quality. We ship floors, not just foundations.</div>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">🎨</div>
+        <div class="feature-num">02</div>
+        <div class="feature-title">Sharp Design</div>
+        <div class="feature-desc">Pixel-perfect interfaces that make people stop scrolling and look up.</div>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">🚀</div>
+        <div class="feature-num">03</div>
+        <div class="feature-title">Performance</div>
+        <div class="feature-desc">No lag, no jank. Smooth rides from lobby to rooftop every time.</div>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-num">04</div>
+        <div class="feature-title">Secure by Default</div>
+        <div class="feature-desc">Every floor is locked tight. Your data stays in the building.</div>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">✨</div>
+        <div class="feature-num">05</div>
+        <div class="feature-title">Animations</div>
+        <div class="feature-desc">Motion that feels alive. Transitions that make the ride worth taking.</div>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon">📐</div>
+        <div class="feature-num">06</div>
+        <div class="feature-title">Scalable</div>
+        <div class="feature-desc">Start at floor one. We build elevators that go as high as you dream.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FLOOR 3 — STATS
+════════════════════════════════════════════ -->
+<section id="floor-3">
+  <div class="blob blob-3" style="left:20%;top:20%;"></div>
+  <div style="max-width:1100px;width:100%;padding:0 80px;text-align:center;">
+    <div class="floor-eyebrow reveal">Floor 3 — Numbers</div>
+    <h2 class="floor-title reveal reveal-delay-1">
+      Floors we've<br><span class="grad">built</span>
+    </h2>
+    <div class="stats-grid reveal reveal-delay-2">
+      <div class="stat-card">
+        <div class="stat-num">38<span>+</span></div>
+        <div class="stat-label">Projects</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">4<span>yr</span></div>
+        <div class="stat-label">Experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">100<span>%</span></div>
+        <div class="stat-label">Satisfaction</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Floors up</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FLOOR R — ROOFTOP / CTA
+════════════════════════════════════════════ -->
+<section id="floor-4">
+  <div class="blob blob-1" style="right:-100px;left:auto;top:-100px;"></div>
+  <div class="blob blob-2"></div>
+
+  <div class="cta-wrap">
+    <div class="floor-eyebrow reveal">Rooftop — Top floor</div>
+    <h2 class="cta-title reveal reveal-delay-1">
+      Ready to<br>
+      <span class="grad">go up?</span>
+    </h2>
+    <p class="cta-sub reveal reveal-delay-2">
+      The view from the top is worth every floor. Let's build something that takes people's breath away.
+    </p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="#floor-1" class="btn-primary">Start from lobby ↑</a>
+      <a href="#" class="btn-ghost">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <a href="#floor-1" class="footer-logo">Elevate<span>.</span></a>
+  <div class="footer-copy">© 2026 — Kontsybko web</div>
+  <a href="#floor-1" class="footer-back">Back to lobby ↑</a>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

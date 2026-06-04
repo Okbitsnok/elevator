@@ -1,0 +1,23 @@
+:root {
+  /* Colors */
+  --bg:        #06050d;
+  --surface:   #0e0c1a;
+  --surface2:  #16132a;
+  --border:    rgba(124, 58, 237, 0.15);
+  --accent:    #7c3aed;
+  --accent2:   #a78bfa;
+  --accent3:   #c084fc;
+  --gold:      #f59e0b;
+  --text:      #f5f3ff;
+  --muted:     #6d6a85;
+  --muted2:    #9d9ab8;
+
+  /* Fonts */
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* Elevator */
+  --door-speed: 1.6s;
+  --door-ease:  cubic-bezier(0.76, 0, 0.24, 1);
+}
